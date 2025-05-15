@@ -3,22 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Portfolio</title>
+    <title>Gulshan Kumar's Portfolio</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
         font-family: "Poppins", sans-serif;
         line-height: 1.6;
-        background-color: #000;
-        color: #333;
+        background-color: #000; /* Dark background base */
+        color: #333; /* Default text color (will be overridden in dark mode) */
         position: relative;
       }
 
@@ -28,9 +36,9 @@
         left: 0;
         height: 100%;
         width: 100%;
-        background: url("infinity.jpg") no-repeat center center fixed;
+        background: url("digital.jpg") no-repeat center center fixed; /* Replace "digital.jpg" with your image path */
         background-size: cover;
-        opacity: 0.3;
+        opacity: 0.5; /* Adjust opacity as needed */
         z-index: -1;
       }
 
@@ -43,20 +51,22 @@
         text-decoration: none;
       }
 
-      /* CHANGED: Header name style directly */
       header h1 {
-        font-size: 2.5rem;
-        color: #f9d342; /* Gold text */
-        background-color: #1b3b48; /* Deep navy background */
+        font-size: 1.85rem;
+        color: #f9d342;
+        background-color: #1b3b48;
         padding: 1rem 2rem;
         border-radius: 12px;
         display: inline-block;
         margin-bottom: 1rem;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Optional: makes text pop */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
       }
 
-      /* Header */
+      header h1 i {
+        margin-right: 0.6rem;
+      }
+
       header {
         background: linear-gradient(45deg, #271a36, #998eb9d7);
         color: #ffffff;
@@ -74,7 +84,6 @@
         margin-top: 1rem;
       }
 
-      /* CHANGED: Box style for nav links */
       nav ul li a {
         color: #fff;
         padding: 0.5rem 1rem;
@@ -100,6 +109,7 @@
         cursor: pointer;
         transition: background 0.3s ease, color 0.3s ease;
         font-size: 1rem;
+        border-radius: 5px;
       }
 
       #theme-toggle:hover {
@@ -118,7 +128,7 @@
         margin-bottom: 1rem;
         text-align: center;
         position: relative;
-        color: #fff;
+        color: #fff; /* White for section titles on dark background */
         text-shadow: 1px 1px 2px #000;
       }
 
@@ -137,40 +147,82 @@
         text-align: center;
         line-height: 1.8;
         margin-bottom: 2rem;
-        color: #ffffff;
+        color: #ffffff; /* White text for about section on dark background */
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
       }
 
+      /* Projects Grid from first doc */
       .projects {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
       }
 
+      /* Project Card Styling - combined/refined */
       .project {
-        background: #fff;
-        padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: white; /* Default light mode background */
+        color: #111; /* Default light mode text */
+        padding: 2rem;
+        border-radius: 15px; /* More rounded from second doc */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow from second doc */
+        position: relative;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex; /* Use flex to layout content */
+        flex-direction: column;
+        justify-content: space-between; /* Space out content and button */
       }
 
       .project:hover {
         transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
       }
 
       .project h3 {
+        font-size: 1.3rem; /* Slightly larger title from second doc */
         margin-bottom: 0.5rem;
-        color: #2575fc;
+        color: #2575fc; /* Blue color from first doc */
+      }
+
+      .project p {
+        font-size: 1rem; /* Consistent font size */
+        margin-bottom: 1rem; /* Add margin below description */
+        flex-grow: 1; /* Allow description to take available space */
+      }
+
+      /* Read More Button - combined/refined */
+      .read-more-btn {
+        margin-top: auto; /* Push button to the bottom */
+        background-color: #2575fc; /* Blue color from first doc */
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1rem; /* Larger padding from second doc */
+        border-radius: 8px; /* More rounded from second doc */
+        cursor: pointer;
+        font-size: 0.95rem; /* Consistent font size */
+        transition: background-color 0.3s ease;
+        align-self: flex-start; /* Align button to the left */
+      }
+
+      .read-more-btn:hover {
+        background-color: #1b4cc4; /* Darker blue on hover */
       }
 
       #contact p {
         text-align: center;
         font-size: 1.1rem;
         margin-bottom: 2rem;
-        color: #fff;
+        color: #fff; /* White text for contact on dark background */
         text-shadow: 1px 1px 2px #000;
+      }
+
+      #contact a {
+        color: #f9d342; /* Highlight contact link */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        transition: color 0.3s ease;
+      }
+
+      #contact a:hover {
+        color: #fff;
       }
 
       footer {
@@ -180,9 +232,99 @@
         padding: 1rem 0;
       }
 
+      /* Modal Styles (from second doc, integrated) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1000; /* High z-index to be on top */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Enable scrolling if needed */
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Semi-transparent black background */
+        backdrop-filter: blur(5px); /* Add a subtle blur effect */
+      }
+
+      .modal-content {
+        background-color: #fff; /* Default light background */
+        color: #111; /* Default dark text */
+        margin: 8% auto; /* Center vertically and horizontally */
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 700px; /* Max width for readability */
+        position: relative;
+        animation: fadeIn 0.3s ease-in-out; /* Animation for smooth appearance */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-content h2 {
+        margin-top: 0;
+        color: #2575fc; /* Use project title color */
+        text-align: left; /* Align title left in modal */
+        margin-bottom: 1rem;
+      }
+
+      .modal-content h2::after {
+        display: none; /* Hide the underline from section h2 */
+      }
+
+      .modal-content ul {
+        padding-left: 1.2rem;
+        margin-bottom: 1rem;
+        list-style: disc;
+      }
+
+      .modal-content ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      .modal-content a {
+        color: #2463eb; /* Link color */
+        text-decoration: underline; /* Underline links */
+      }
+
+      .modal-content a:hover {
+        color: #1b4cc4; /* Darker link on hover */
+      }
+
+      .close-btn {
+        color: #333; /* Default dark color */
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 1.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .close-btn:hover {
+        color: #e74c3c; /* Red color on hover */
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Media Queries */
       @media (max-width: 600px) {
         header h1 {
           font-size: 2rem;
+          padding: 0.8rem 1.5rem;
         }
 
         section h2 {
@@ -192,21 +334,54 @@
         #theme-toggle {
           top: 1rem;
           right: 0.5rem;
+          padding: 0.3rem 0.6rem;
+          font-size: 0.9rem;
+        }
+
+        nav ul {
+          gap: 0.5rem;
+        }
+
+        nav ul li a {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.9rem;
+        }
+
+        .project {
+          padding: 1.5rem;
+        }
+
+        .modal-content {
+          padding: 1.5rem;
+          margin: 5% auto;
+        }
+
+        .close-btn {
+          font-size: 1.5rem;
+          right: 15px;
         }
       }
 
-      .dark-mode .project {
-        background: #1e1e1e;
-        color: #e0e0e0;
+      /* Dark Mode Styles */
+      body.dark-mode {
+        color: #e0e0e0; /* Light text for dark background */
       }
 
       .dark-mode header {
         background: linear-gradient(45deg, #333, #555);
       }
 
+      .dark-mode header h1 {
+        color: #f9d342; /* Keep the golden title color */
+        background-color: #2c2c2c; /* Darker background for title */
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.1);
+      }
+
       .dark-mode nav ul li a {
         color: #e0e0e0;
         border-color: #e0e0e0;
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       .dark-mode nav ul li a:hover {
@@ -214,8 +389,25 @@
         color: #121212;
       }
 
+      .dark-mode section h2 {
+        color: #e0e0e0; /* Light color for section titles */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .dark-mode #about p,
+      .dark-mode #contact p {
+        color: #e0e0e0; /* Light text color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .dark-mode #contact a {
+        color: #f9d342; /* Keep the highlight color */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
       .dark-mode footer {
         background: #222;
+        color: #e0e0e0;
       }
 
       .dark-mode #theme-toggle {
@@ -227,20 +419,69 @@
         background: #e0e0e0;
         color: #121212;
       }
+
+      /* Dark mode project card styles */
+      .dark-mode .project {
+        background: #1e1e1e; /* Dark background for cards */
+        color: #e0e0e0; /* Light text for cards */
+        box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); /* Lighter shadow */
+      }
+
+      .dark-mode .project:hover {
+        box-shadow: 0 12px 35px rgba(255, 255, 255, 0.1); /* Slightly larger shadow on hover */
+      }
+
+      .dark-mode .project h3 {
+        color: #4e8eff; /* Lighter blue for titles */
+      }
+
+      .dark-mode .read-more-btn {
+        background-color: #4e8eff; /* Lighter blue button */
+        color: #fff;
+      }
+
+      .dark-mode .read-more-btn:hover {
+        background-color: #357ae8; /* Darker lighter blue */
+      }
+
+      /* Dark mode modal styles */
+      .dark-mode .modal-content {
+        background-color: #2c2c2c; /* Dark background for modal content */
+        color: #e0e0e0; /* Light text for modal content */
+        box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+      }
+
+      .dark-mode .modal-content h2 {
+        color: #4e8eff; /* Lighter blue title in modal */
+      }
+
+      .dark-mode .modal-content a {
+        color: #f9d342; /* Highlight links in dark modal */
+      }
+
+      .dark-mode .modal-content a:hover {
+        color: #ffea7f; /* Lighter highlight on hover */
+      }
+
+      .dark-mode .close-btn {
+        color: #e0e0e0; /* Light color for close button */
+      }
+
+      .dark-mode .close-btn:hover {
+        color: #ff6b6b; /* Red color on hover */
+      }
     </style>
   </head>
-  <body>
+
+  <body class="dark-mode">
     <div class="background-overlay"></div>
+
     <div class="content">
       <header>
-        <!-- CHANGED: Removed .name-box and applied direct style to h1 -->
-        <h1>Gulshan Kumar</h1>
-
+        <h1><i class="fas fa-laptop-code"></i>Gulshan Kumar</h1>
         <nav>
           <ul>
-            <li>
-              <a href="Resume.pdf" target="_blank">Resume</a>
-            </li>
+            <li><a href="Resume.pdf" target="_blank">Resume</a></li>
             <li>
               <a href="https://leetcode.com/runningfalcon/" target="_blank"
                 >LeetCode</a
@@ -260,8 +501,7 @@
             </li>
           </ul>
         </nav>
-
-        <button id="theme-toggle">Dark Mode</button>
+        <button id="theme-toggle">Light Mode</button>
       </header>
 
       <section id="about">
@@ -269,8 +509,7 @@
         <p>
           I'm a passionate developer with experience in building elegant and
           functional websites and applications. I love coding, problem-solving,
-          and continuously learning new technologies. Welcome to my portfolio
-          where you can explore my projects, skills, and more.
+          and continuously learning new technologies.
         </p>
       </section>
 
@@ -278,25 +517,38 @@
         <h2>Projects</h2>
         <div class="projects">
           <div class="project">
-            <h3>Project One</h3>
+            <h3>
+              🎬 MovieMind: Intelligent Movie Rating & Recommendation System
+            </h3>
             <p>
-              A brief description of your project, highlighting what it does and
-              the technologies used.
+              Built a smart ML system that predicts IMDb ratings and recommends
+              movies.
             </p>
+            <button class="read-more-btn" onclick="openModal('modal1')">
+              Read More ↓
+            </button>
           </div>
+
           <div class="project">
             <h3>Project Two</h3>
             <p>
-              A brief description of your project, highlighting what it does and
-              the technologies used.
+              A brief description of your second project, highlighting what it
+              does and the technologies used.
             </p>
+            <button class="read-more-btn" onclick="openModal('modal2')">
+              Read More ↓
+            </button>
           </div>
+
           <div class="project">
             <h3>Project Three</h3>
             <p>
-              A brief description of your project, highlighting what it does and
-              the technologies used.
+              A brief description of your third project, highlighting what it
+              does and the technologies used.
             </p>
+            <button class="read-more-btn" onclick="openModal('modal3')">
+              Read More ↓
+            </button>
           </div>
         </div>
       </section>
@@ -314,14 +566,104 @@
       </footer>
     </div>
 
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
+        <h2>🎬 MovieMind: Intelligent Movie Rating & Recommendation System</h2>
+        <p>
+          Developed an end-to-end machine learning system that predicts IMDb
+          ratings based on director, actors, genres, and duration, and
+          recommends movies using genre similarity. Utilized TMDb API and fuzzy
+          matching for movie title inconsistencies.
+        </p>
+        <ul>
+          <li>
+            🔍 Features: Rating prediction, genre-based recommendations,
+            cold-start handling
+          </li>
+          <li>
+            🛠️ Technologies: Python, Pandas, Scikit-Learn, TMDb API, FuzzyWuzzy,
+            XGBoost
+          </li>
+          <li>
+            📊 Dataset: The Movies Dataset created by combining various online
+            sources
+          </li>
+        </ul>
+        <p>
+          🔗
+          <a href="https://github.com/gulshantrains/MovieMind" target="_blank"
+            >View Code on GitHub</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
+        <h2>Project Two</h2>
+        <p>
+          This is the detailed description for Project Two. You can include more
+          information here such as challenges faced, specific techniques used,
+          outcomes, and links to live demos or repositories.
+        </p>
+      </div>
+    </div>
+
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modal3')">&times;</span>
+        <h2>Project Three</h2>
+        <p>
+          This is the detailed description for Project Three. Expand on the
+          brief description from the project card with more specific details
+          about the project's purpose, functionality, and technical
+          implementation.
+        </p>
+      </div>
+    </div>
+
     <script>
+      // Theme Toggle Script
       const toggleButton = document.getElementById("theme-toggle");
+      // Set initial button text based on body class
+      if (document.body.classList.contains("dark-mode")) {
+        toggleButton.textContent = "Light Mode";
+      } else {
+        toggleButton.textContent = "Dark Mode";
+      }
+
       toggleButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
+        // Update button text after toggling class
         toggleButton.textContent = document.body.classList.contains("dark-mode")
           ? "Light Mode"
           : "Dark Mode";
       });
+
+      // Modal Script
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        // Optional: Disable body scroll when modal is open
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        // Optional: Re-enable body scroll
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside content
+      window.onclick = function (event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => {
+          if (event.target === modal) {
+            closeModal(modal.id); // Use the close function to handle body scroll
+          }
+        });
+      };
     </script>
   </body>
 </html>
