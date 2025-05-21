@@ -151,6 +151,47 @@
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
       }
 
+      /* Skills Section */
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .skill-category {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem 0.5rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+      }
+
+      .skill-category h3 {
+        color: #f9d342;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .skill-list {
+        list-style: none;
+      }
+
+      .skill-list li {
+        color: #fff;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .skill-list li:hover {
+        transform: translateX(5px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
       /* Projects Grid from first doc */
       .projects {
         display: grid;
@@ -364,6 +405,10 @@
           font-size: 1.5rem;
           right: 15px;
         }
+
+        .skills {
+          grid-template-columns: 1fr;
+        }
       }
 
       /* Dark Mode Styles */
@@ -474,6 +519,19 @@
       .dark-mode .close-btn:hover {
         color: #ff6b6b; /* Red color on hover */
       }
+
+      /* Dark mode skills section */
+      .dark-mode .skill-category {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .dark-mode .skill-list li {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .dark-mode .skill-list li:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
     </style>
   </head>
 
@@ -515,6 +573,66 @@
           functional websites and applications. I love coding, problem-solving,
           and continuously learning new technologies.
         </p>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill-category">
+            <i
+              class="fab fa-python"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>Python</h3>
+          </div>
+          <div class="skill-category">
+            <i class="fab fa-js" style="font-size: 1.5rem; color: #f9d342"></i>
+            <h3>JavaScript</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fab fa-java"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>Java</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fab fa-react"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>React</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fab fa-node-js"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>Node.js</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fas fa-database"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>SQL</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fab fa-git-alt"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>Git</h3>
+          </div>
+          <div class="skill-category">
+            <i
+              class="fas fa-robot"
+              style="font-size: 1.5rem; color: #f9d342"
+            ></i>
+            <h3>Machine Learning</h3>
+          </div>
+        </div>
       </section>
 
       <section id="projects">
